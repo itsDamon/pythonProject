@@ -16,7 +16,7 @@ GPIO.setup(ledRosso, GPIO.OUT)
 GPIO.setup(ledGiallo, GPIO.OUT)
 GPIO.setup(ledVerde, GPIO.OUT)
 GPIO.setup(ledVerdePedone, GPIO.OUT)
-GPIO.setup(bottone, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(bottone, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 def pedone():
