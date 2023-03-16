@@ -40,17 +40,24 @@ def pedone(channel):
 GPIO.add_event_detect(bottone, GPIO.FALLING, callback=pedone, bouncetime=1000)
 
 if __name__ == '__main__':
-    while True:
-        if ON:
-            GPIO.output(ledRosso, GPIO.HIGH)
-            sleep(5)
-        if ON:
-            GPIO.output(ledRosso, GPIO.LOW)
-        if ON:
-            GPIO.output(ledGiallo, GPIO.HIGH)
-            sleep(2)
-            GPIO.output(ledGiallo, GPIO.LOW)
-        if ON:
-            GPIO.output(ledVerde, GPIO.HIGH)
-            sleep(3)
-            GPIO.output(ledVerde, GPIO.LOW)
+    try:
+        while True:
+            if ON:
+                GPIO.output(ledRosso, GPIO.HIGH)
+                sleep(5)
+            if ON:
+                GPIO.output(ledRosso, GPIO.LOW)
+            if ON:
+                GPIO.output(ledGiallo, GPIO.HIGH)
+                sleep(2)
+                GPIO.output(ledGiallo, GPIO.LOW)
+            if ON:
+                GPIO.output(ledVerde, GPIO.HIGH)
+                sleep(3)
+                GPIO.output(ledVerde, GPIO.LOW)
+    except KeyboardInterrupt:
+        GPIO.output(ledRosso, GPIO.LOW)
+        GPIO.output(ledGiallo, GPIO.LOW)
+        GPIO.output(ledVerde, GPIO.LOW)
+        GPIO.output(ledVerdePedone, GPIO.LOW)
+        GPIO.cleanup()
