@@ -43,6 +43,7 @@ if __name__ == '__main__':
         if ON:
             GPIO.output(ledRosso, GPIO.HIGH)
             sleep(5)
+        if ON:
             GPIO.output(ledRosso, GPIO.LOW)
         if ON:
             GPIO.output(ledGiallo, GPIO.HIGH)
