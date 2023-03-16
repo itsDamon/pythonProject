@@ -49,4 +49,5 @@ if __name__ == '__main__':
             GPIO.output(ledRosso, GPIO.HIGH)
             GPIO.output(ledVerdePedone, GPIO.HIGH)
             sleep(5)
+            GPIO.output(ledVerdePedone, GPIO.LOW)
             STATO = 0
