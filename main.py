@@ -11,6 +11,8 @@ ledVerde = 17
 ledVerdePedone = 27
 bottone = 2
 
+GPIO.cleanup()
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ledRosso, GPIO.OUT)
 GPIO.setup(ledGiallo, GPIO.OUT)
