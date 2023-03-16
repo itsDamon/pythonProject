@@ -33,6 +33,7 @@ def pedone(channel):
     GPIO.output(ledVerdePedone, GPIO.HIGH)
     sleep(5)
     GPIO.output(ledVerdePedone, GPIO.LOW)
+    GPIO.output(ledRosso, GPIO.LOW)
     ON = True
 
 
