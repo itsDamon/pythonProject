@@ -21,7 +21,7 @@ GPIO.setup(ledVerdePedone, GPIO.OUT)
 GPIO.setup(bottone, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
-def pedone():
+def pedone(channel):
     global STATO
     STATO = 1 if STATO != 1 else 0
     GPIO.output(ledRosso, GPIO.LOW)
