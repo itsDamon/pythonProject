@@ -22,6 +22,8 @@ GPIO.setup(bottone, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 def pedone(channel):
+    global ON
+    ON = False
     GPIO.output(ledRosso, GPIO.LOW)
     GPIO.output(ledGiallo, GPIO.LOW)
     GPIO.output(ledVerde, GPIO.LOW)
@@ -31,6 +33,7 @@ def pedone(channel):
     GPIO.output(ledVerdePedone, GPIO.HIGH)
     sleep(5)
     GPIO.output(ledVerdePedone, GPIO.LOW)
+    ON = True
 
 
 GPIO.add_event_detect(bottone, GPIO.FALLING, callback=pedone, bouncetime=1000)
