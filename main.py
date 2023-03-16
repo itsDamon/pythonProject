@@ -23,7 +23,7 @@ GPIO.setup(bottone, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def pedone(channel):
     global STATO
-    STATO = 1 if STATO != 1 else 0
+    STATO = 1
     GPIO.output(ledRosso, GPIO.LOW)
     GPIO.output(ledGiallo, GPIO.LOW)
     GPIO.output(ledVerde, GPIO.LOW)
@@ -48,3 +48,5 @@ if __name__ == '__main__':
         elif STATO == 1:
             GPIO.output(ledRosso, GPIO.HIGH)
             GPIO.output(ledVerdePedone, GPIO.HIGH)
+            sleep(5)
+            STATO = 0
